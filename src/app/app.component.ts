@@ -37,12 +37,12 @@ export class AppComponent implements OnInit {
   interval$: Observable<number> = interval(1000);
 
 
-
+  searchBox: any;
 
   ngOnInit() {
 
-    const searchBox = document.getElementById('testDebounce');
-    const keyup$ = fromEvent(searchBox, 'keyup');
+    this.searchBox = document.getElementById('testDebounce');
+    const keyup$ = fromEvent(this.searchBox, 'keyup');
 
     this.form = this.formBuilder.group({
       test: this.formBuilder.control(''),
